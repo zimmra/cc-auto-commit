@@ -1,0 +1,32 @@
+{
+  "name": "auto-commit",
+  "description": "Automatically commit file changes with AI-generated contextual messages",
+  "version": "1.0.0",
+  "tags": ["git", "automation", "commit", "ai", "codex"],
+  "requirements": ["git", "codex"],
+  "platforms": ["linux", "darwin", "win32"],
+  "matcher": "Edit|MultiEdit|Write|Update|NotebookEdit|mcp__serena__replace_symbol_body|mcp__serena__insert_after_symbol|mcp__serena__insert_before_symbol",
+  "timeout": 30,
+  "defaultConfig": {
+    "enabled": true,
+    "commitPrompt": "Generate a concise git commit message for the following changes. Return only the commit message, no additional text or formatting:",
+    "excludePatterns": [
+      "*.log",
+      "*.tmp",
+      "*.temp",
+      ".env*",
+      "*.key",
+      "*.pem",
+      "*.p12",
+      "*.pfx",
+      "node_modules/**",
+      ".git/**",
+      "*.pyc",
+      "__pycache__/**"
+    ],
+    "skipEmptyCommits": true,
+    "addAllFiles": false,
+    "branchRestrictions": [],
+    "maxCommitMessageLength": 500
+  }
+}
